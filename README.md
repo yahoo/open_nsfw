@@ -8,6 +8,9 @@ Defining NSFW material is subjective and the task of identifying these images is
 
 Since images and user generated content dominate the internet today, filtering nudity and other not suitable for work images becomes an important problem. In this repository we opensource a caffe deep neural network for priliminary filtering of NSFW images. 
 
+![Demo Image](https://66.media.tumblr.com/a24135a56ecf20d7efb81dda0f4ccbac/tumblr_inline_oebl0iNWRM1rilvr1_500.png "")
+
+
 #### Usage
 
 * The network takes in a image and gives output a probability (score between 0-1) which can be used to filter not suitable for work images. Scores < 0.2 indicate that the image is likely to be safe with high probability. Scores > 0.8 indicate that the image is highly probable to be NSFW. Scores in middle range may be binned for different NSFW levels. 
