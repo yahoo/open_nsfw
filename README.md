@@ -1,5 +1,5 @@
 # Open nsfw model
-This repo contains code for running Not Suitable for Work (NSFW) classification deep neural network Caffe models.
+This repo contains code for running Not Suitable for Work (NSFW) classification deep neural network Caffe models. Please refer our [blog](https://yahooeng.tumblr.com/post/151148689421/open-sourcing-a-deep-learning-solution-for) post which describes this work and experiments in more detail.
 
 #### Not suitable for work classifier
 Detecting offensive / adult images is an important problem which researchers have tackled for decades. With the evolution of computer vision and deep learning the algorithms have matured and we are now able to classify an image as not suitable for work with greater precision.
@@ -13,6 +13,7 @@ Since images and user generated content dominate the internet today, filtering n
 * The network takes in a image and gives output a probability (score between 0-1) which can be used to filter not suitable for work images. Scores < 0.2 indicate that the image is likely to be safe with high probability. Scores > 0.8 indicate that the image is highly probable to be NSFW. Scores in middle range may be binned for different NSFW levels. 
 * Depending on the dataset, usecase and types of images, we advise developers to choose suitable thresholds. Due to difficult nature of problem, there will be errors, which depend on use-cases / definition / tolerance of NSFW.  Ideally developers should create a evaluation set according to the definition of what is safe for their application, then fit a [ROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) curve to choose a suitable threshold if they are using the model as it is. 
 * ***Results can be improved by [fine-tuning](http://caffe.berkeleyvision.org/gathered/examples/finetune_flickr_style.html)*** the model for your dataset/ uscase / definition of NSFW. We do not provide any guarantees of accuracy of results. Please read the disclaimer below.
+* Using human moderation for edge cases in combination with the machine learned solution will help improve performance.
 
 #### Description of model
 We trained the model on the dataset with NSFW images as positive and SFW(suitable for work) images as negative. These images were editorially labelled. We cannot release the dataset or other details due to the nature of the data. 
