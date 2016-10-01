@@ -28,6 +28,22 @@ We used the thin resnet 50 1by2 architecture as the pretrained network. The mode
 
 Please note that deeper networks, or networks with more filters can improve accuracy. We train the model using a thin residual network architecture, since it provides good tradeoff in terms of accuracy, and the model is light-weight in terms of runtime (or flops) and memory (or number of parameters).
 
+#### Docker Quickstart
+This Docker quickstart guide can be used for evaluating the model quickly with minimal dependency installation.
+
+Build the image 
+```
+docker build . -t open_nsfw
+```
+
+Run the image with your local Pictures folder mounted inside the container to `/Pictures`
+```
+docker run -v ~/Pictures:/Pictures open_nsfw python ./classify_nsfw.py \
+--model_def nsfw_model/deploy.prototxt \
+--pretrained_model nsfw_model/resnet_50_1by2_nsfw.caffemodel \
+/Pictures/your_local_image.jpg
+```
+
 #### Running the model
 To run this model, please install [Caffe](https://github.com/BVLC/caffe) and its python extension and make sure pycaffe is available in your PYTHONPATH.
 
