@@ -31,6 +31,11 @@ Please note that deeper networks, or networks with more filters can improve accu
 #### Docker Quickstart
 This Docker quickstart guide can be used for evaluating the model quickly with minimal dependency installation.
 
+Install Docker Engine
+- [Windows Installation](https://docs.docker.com/v1.8/installation/windows/)
+- [Mac OSX Installation](https://docs.docker.com/v1.8/installation/mac/)
+- [Ubuntu Installation](https://docs.docker.com/v1.8/installation/ubuntulinux/)
+
 Build the image 
 ```
 docker build . -t open_nsfw
