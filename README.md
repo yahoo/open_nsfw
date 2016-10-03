@@ -36,19 +36,31 @@ Install Docker Engine
 - [Mac OSX Installation](https://docs.docker.com/v1.8/installation/mac/)
 - [Ubuntu Installation](https://docs.docker.com/v1.8/installation/ubuntulinux/)
 
-Build the image 
+Build a caffe docker image (CPU) 
 ```
-docker build . -t open_nsfw
+docker build -t caffe:cpu https://raw.githubusercontent.com/BVLC/caffe/master/docker/standalone/cpu/Dockerfile
 ```
 
-Run the image with your local Pictures folder mounted inside the container to `/Pictures`
+Check the caffe installation
 ```
-docker run -v ~/Pictures:/Pictures open_nsfw python ./classify_nsfw.py \
+docker run caffe:cpu caffe --version
+caffe version 1.0.0-rc3
+```
+
+Run the docker image with a volume mapped to your `open_nsfw` repository. Your `test_image.jpg` should be located in this same directory.
+```
+cd open_nsfw
+docker run --volume=$(pwd):/workspace caffe:cpu \
+python ./classify_nsfw.py \
 --model_def nsfw_model/deploy.prototxt \
 --pretrained_model nsfw_model/resnet_50_1by2_nsfw.caffemodel \
-/Pictures/your_local_image.jpg
+test_image.jpg
 ```
 
+We will get the NSFW score returned:
+```
+NSFW score:   0.14057905972
+``` 
 #### Running the model
 To run this model, please install [Caffe](https://github.com/BVLC/caffe) and its python extension and make sure pycaffe is available in your PYTHONPATH.
 
