@@ -28,6 +28,39 @@ We used the thin resnet 50 1by2 architecture as the pretrained network. The mode
 
 Please note that deeper networks, or networks with more filters can improve accuracy. We train the model using a thin residual network architecture, since it provides good tradeoff in terms of accuracy, and the model is light-weight in terms of runtime (or flops) and memory (or number of parameters).
 
+#### Docker Quickstart
+This Docker quickstart guide can be used for evaluating the model quickly with minimal dependency installation.
+
+Install Docker Engine
+- [Windows Installation](https://docs.docker.com/v1.8/installation/windows/)
+- [Mac OSX Installation](https://docs.docker.com/v1.8/installation/mac/)
+- [Ubuntu Installation](https://docs.docker.com/v1.8/installation/ubuntulinux/)
+
+Build a caffe docker image (CPU) 
+```
+docker build -t caffe:cpu https://raw.githubusercontent.com/BVLC/caffe/master/docker/standalone/cpu/Dockerfile
+```
+
+Check the caffe installation
+```
+docker run caffe:cpu caffe --version
+caffe version 1.0.0-rc3
+```
+
+Run the docker image with a volume mapped to your `open_nsfw` repository. Your `test_image.jpg` should be located in this same directory.
+```
+cd open_nsfw
+docker run --volume=$(pwd):/workspace caffe:cpu \
+python ./classify_nsfw.py \
+--model_def nsfw_model/deploy.prototxt \
+--pretrained_model nsfw_model/resnet_50_1by2_nsfw.caffemodel \
+test_image.jpg
+```
+
+We will get the NSFW score returned:
+```
+NSFW score:   0.14057905972
+``` 
 #### Running the model
 To run this model, please install [Caffe](https://github.com/BVLC/caffe) and its python extension and make sure pycaffe is available in your PYTHONPATH.
 
