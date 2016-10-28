@@ -32,9 +32,9 @@ Please note that deeper networks, or networks with more filters can improve accu
 This Docker quickstart guide can be used for evaluating the model quickly with minimal dependency installation.
 
 Install Docker Engine
-- [Windows Installation](https://docs.docker.com/v1.8/installation/windows/)
-- [Mac OSX Installation](https://docs.docker.com/v1.8/installation/mac/)
-- [Ubuntu Installation](https://docs.docker.com/v1.8/installation/ubuntulinux/)
+- [Windows Installation](https://docs.docker.com/engine/installation/windows/)
+- [Mac OSX Installation](https://docs.docker.com/engine/installation/windows/)
+- [Ubuntu Installation](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
 
 Build a caffe docker image (CPU) 
 ```
