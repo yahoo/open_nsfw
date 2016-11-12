@@ -32,7 +32,7 @@ Please note that deeper networks, or networks with more filters can improve accu
 This Docker quickstart guide can be used for evaluating the model quickly with minimal dependency installation.
 
 Install Docker Engine
-- [Windows Installation](https://docs.docker.com/v1.8/installation/windows/)
+- [Windows Installation](https://docs.docker.com/docker-for-windows/)
 - [Mac OSX Installation](https://docs.docker.com/v1.8/installation/mac/)
 - [Ubuntu Installation](https://docs.docker.com/v1.8/installation/ubuntulinux/)
 
