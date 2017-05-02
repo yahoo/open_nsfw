@@ -38,7 +38,7 @@ Install Docker Engine
 
 Build a caffe docker image (CPU) 
 ```
-docker build -t caffe:cpu https://raw.githubusercontent.com/BVLC/caffe/master/docker/standalone/cpu/Dockerfile
+docker build -t caffe:cpu https://raw.githubusercontent.com/BVLC/caffe/master/docker/cpu/Dockerfile
 ```
 
 Check the caffe installation
