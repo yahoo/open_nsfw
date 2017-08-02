@@ -12,6 +12,7 @@ import argparse
 from PIL import Image
 from StringIO import StringIO
 import caffe
+import pickle
 
 
 def resize_image(data, sz=(256, 256)):
@@ -115,6 +116,7 @@ def main(argv):
 
     image_exts = ['.jpg', '.jpeg', '.png']
 
+    outputs = []
     for path, dirs, files in os.walk(args.input_dir):
         files = [f for f in files if os.path.splitext(f)[-1] in image_exts]
         for f in files:
@@ -124,8 +126,10 @@ def main(argv):
                 caffe_transformer=caffe_transformer,
                 caffe_net=nsfw_net,
                 output_layers=['prob'])
-            print(path, f, scores[1])
-
+            outputs.append((path, f, scores[1]))
+            print(len(outputs), path, f, scores[1])
+    
+    pickle.dump(outputs, open('NSFW_scores.pkl', 'wb'), pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
     main(sys.argv)
