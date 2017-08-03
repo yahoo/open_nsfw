@@ -129,7 +129,7 @@ def main(argv):
             outputs.append((path, f, scores[1]))
             print(len(outputs), path, f, scores[1])
     
-    pickle.dump(outputs, open('NSFW_scores.pkl', 'wb'), pickle.HIGHEST_PROTOCOL)
+    pickle.dump(outputs, open('nudes_NSFW_scores.pkl', 'wb'), pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
     main(sys.argv)
