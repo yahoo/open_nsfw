@@ -1,4 +1,6 @@
 # Open nsfw model
+[![Try model on Haystack](https://img.shields.io/badge/try-on%20haystack-blue.svg)](https://www.haystack.ai/demos/Yahoo-NSFW-Demo)
+
 This repo contains code for running Not Suitable for Work (NSFW) classification deep neural network Caffe models. Please refer our [blog](https://yahooeng.tumblr.com/post/151148689421/open-sourcing-a-deep-learning-solution-for) post which describes this work and experiments in more detail.
 
 #### Not suitable for work classifier
