@@ -32,13 +32,13 @@ Please note that deeper networks, or networks with more filters can improve accu
 This Docker quickstart guide can be used for evaluating the model quickly with minimal dependency installation.
 
 Install Docker Engine
-- [Windows Installation](https://docs.docker.com/v1.8/installation/windows/)
-- [Mac OSX Installation](https://docs.docker.com/v1.8/installation/mac/)
-- [Ubuntu Installation](https://docs.docker.com/v1.8/installation/ubuntulinux/)
+- [Windows Installation](https://docs.docker.com/docker-for-windows/install/)
+- [Mac OSX Installation](https://docs.docker.com/docker-for-mac/install/)
+- [Ubuntu Installation](https://docs.docker.com/engine/installation/linux/ubuntu/)
 
 Build a caffe docker image (CPU) 
 ```
-docker build -t caffe:cpu https://raw.githubusercontent.com/BVLC/caffe/master/docker/standalone/cpu/Dockerfile
+docker build -t caffe:cpu https://raw.githubusercontent.com/BVLC/caffe/master/docker/cpu/Dockerfile
 ```
 
 Check the caffe installation
