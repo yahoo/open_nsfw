@@ -3455,29 +3455,29 @@ layer {
   }
 }
 layer {
-   name: "fc_nsfw"
-   type: "InnerProduct"
-   bottom: "pool"
-   top: "fc_nsfw"
-   param {
-       lr_mult: 5
-       decay_mult: 1
-   }
-   param {
-       lr_mult: 10
-       decay_mult: 0
-   }
-   inner_product_param{
-	   num_output: 2
-	   weight_filler {
-		 type: "xavier"
-		 std: 0.01
-	   }
-	   bias_filler {
-	      type: "xavier"
-		  value: 0
-	   }
-   }
+  name: "fc_nsfw"
+  type: "InnerProduct"
+  bottom: "pool"
+  top: "fc_nsfw"
+  param {
+    lr_mult: 5
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 10
+    decay_mult: 0
+  }
+  inner_product_param{
+    num_output: 2
+    weight_filler {
+      type: "xavier"
+      std: 0.01
+    }
+    bias_filler {
+      type: "xavier"
+      value: 0
+    }
+  }
 }
 layer {
   name: "prob"
