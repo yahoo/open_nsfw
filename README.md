@@ -43,7 +43,7 @@ docker build -t caffe:cpu https://raw.githubusercontent.com/BVLC/caffe/master/do
 
 Check the caffe installation
 ```
-docker run caffe:cpu caffe --version
+docker run bvlc/caffe:cpu caffe --version
 caffe version 1.0.0-rc3
 ```
 
